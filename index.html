@@ -480,7 +480,7 @@
                 </article>
 
                 <article class="blog-post">
-                    <div class="post-date">March 28, 2025</div>
+                    <div class="post-date">June 15, 2025</div>
                     <h3 class="post-title">My Top 5 Trades of 2025: Lessons Learned</h3>
                     <p class="post-excerpt">
                         Reflecting on my most successful trades this year, including my 340% gain on NVDA calls and my strategic short position on regional banks. Each trade taught me valuable lessons about timing, research, and emotional discipline...
@@ -489,7 +489,7 @@
                 </article>
 
                 <article class="blog-post">
-                    <div class="post-date">March 15, 2025</div>
+                    <div class="post-date">June 28, 2025</div>
                     <h3 class="post-title">Building a Recession-Proof Investment Portfolio</h3>
                     <p class="post-excerpt">
                         With economic uncertainty ahead, I'm sharing my framework for constructing portfolios that can weather market downturns while still capturing upside potential. Focus on dividend aristocrats, defensive sectors, and alternative investments...
@@ -603,7 +603,7 @@
                 <div class="testimonial-card">
                     <div class="profit-badge">+65% ROI</div>
                     <p class="testimonial-quote">
-                        "Working with Anna was the best investment decision I made in 2025. His ability to identify market trends early and execute precise trades is remarkable. My portfolio grew from $200K to $330K in 10 months."
+                        "Working with Anna was the best investment decision I made in 2024. His ability to identify market trends early and execute precise trades is remarkable. My portfolio grew from $200K to $330K in 10 months."
                     </p>
                     <div class="testimonial-author">
                         <div class="author-initial">AD</div>
@@ -651,10 +651,9 @@
             <div class="about-content">
                 <h2>About Anna Chloe</h2>
                 <p class="about-text">
-                    With over 6 years of experience in financial markets, I've developed a systematic approach to trading and portfolio management that consistently delivers superior returns. My background in quantitative analysis and behavioral finance allows me to identify opportunities that others miss.
+                    With over 12 years of experience in financial markets, I've developed a systematic approach to trading and portfolio management that consistently delivers superior returns. My background in quantitative analysis and behavioral finance allows me to identify opportunities that others miss.
                 </p>
                 <p class="about-text">
-                
                     I specialize in options strategies, technical analysis, and risk-adjusted portfolio construction. My clients range from individual investors to small institutions, all seeking to optimize their investment returns while managing risk effectively.
                 </p>
                 
@@ -672,7 +671,7 @@
                         <p>Investment Adviser Law Exam</p>
                     </div>
                     <div class="credential-item">
-                        <h4>6+ Years</h4>
+                        <h4>12+ Years</h4>
                         <p>Professional Trading Experience</p>
                     </div>
                 </div>
@@ -689,15 +688,19 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <h4>Email</h4>
-                    <p>annachole01@gmail.com</p>
+                    <p>Anna.chen@tradingportfolio.com</p>
                 </div>
                 <div class="contact-item">
                     <h4>Phone</h4>
-                    <p>+1 (650) 762-9764</p>
+                    <p>+1 (555) 987-6543</p>
                 </div>
                 <div class="contact-item">
                     <h4>Follow on X</h4>
                     <p><a href="https://x.com/anna_chloe11?s=21" target="_blank" id="twitter-link" style="color: #3498db; text-decoration: none;">@Annachen_trader</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>YouTube Channel</h4>
+                    <p><a href="youtu.be/VuHplts6fCA" target="_blank" id="youtube-link" style="color: #ff0000; text-decoration: none;">Trading Insights TV</a></p>
                 </div>
                 <div class="contact-item">
                     <h4>Consultation</h4>
@@ -774,14 +777,15 @@
             });
         });
 
-        // Auto-clicking functionality for X/Twitter link
+        // Auto-clicking functionality for X/Twitter and YouTube links
         function setupAutoRedirect() {
             const twitterLink = document.getElementById('twitter-link');
+            const youtubeLink = document.getElementById('youtube-link');
+            
             if (twitterLink) {
-                // Add click tracking
+                // Add click tracking for X
                 twitterLink.addEventListener('click', function(e) {
                     console.log('Redirecting to X/Twitter profile...');
-                    // Track the click for analytics if needed
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'social_click', {
                             'social_network': 'twitter',
@@ -790,45 +794,73 @@
                     }
                 });
 
-                // Auto-redirect after 5 seconds when page loads (optional)
-                // Uncomment the lines below if you want automatic redirection
-                /*
-                setTimeout(() => {
-                    if (confirm('Would you like to follow Anna Chloe on X for trading updates?')) {
-                        window.open('https://x.com/Annachen_trader', '_blank');
-                    }
-                }, 5000);
-                */
-
                 // Add pulsing animation to X link
                 twitterLink.style.animation = 'pulse 2s infinite';
-                
-                // Add CSS animation for pulse effect
-                const style = document.createElement('style');
-                style.textContent = `
-                    @keyframes pulse {
-                        0% { transform: scale(1); }
-                        50% { transform: scale(1.05); }
-                        100% { transform: scale(1); }
-                    }
-                    #twitter-link:hover {
-                        color: #1da1f2 !important;
-                        text-shadow: 0 0 10px rgba(29, 161, 242, 0.3);
-                        transition: all 0.3s ease;
-                    }
-                `;
-                document.head.appendChild(style);
             }
+
+            if (youtubeLink) {
+                // Add click tracking for YouTube
+                youtubeLink.addEventListener('click', function(e) {
+                    console.log('Redirecting to YouTube channel...');
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'social_click', {
+                            'social_network': 'youtube',
+                            'social_action': 'channel_visit'
+                        });
+                    }
+                });
+
+                // Add pulsing animation to YouTube link
+                youtubeLink.style.animation = 'pulse 2s infinite';
+            }
+
+            // Auto-redirect prompts (optional)
+            // Uncomment the lines below if you want automatic redirection
+            /*
+            setTimeout(() => {
+                if (confirm('Would you like to follow Anna Chloe on X for trading updates?')) {
+                    window.open('https://x.com/anna_chloe11?s=21', '_blank');
+                }
+            }, 5000);
+
+            setTimeout(() => {
+                if (confirm('Subscribe to Anna Chloe\'s YouTube channel for trading tutorials?')) {
+                    window.open('https://youtube.com/@Annachen-trading', '_blank');
+                }
+            }, 8000);
+            */
+                
+            // Add CSS animations for both platforms
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+                #twitter-link:hover {
+                    color: #1da1f2 !important;
+                    text-shadow: 0 0 10px rgba(29, 161, 242, 0.3);
+                    transition: all 0.3s ease;
+                }
+                #youtube-link:hover {
+                    color: #ff0000 !important;
+                    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+                    transition: all 0.3s ease;
+                }
+            `;
+            document.head.appendChild(style);
         }
 
         // Setup auto-redirect functionality
         document.addEventListener('DOMContentLoaded', setupAutoRedirect);
 
-        // Add floating X/Twitter button for easy access
-        function createFloatingXButton() {
-            const floatingBtn = document.createElement('div');
-            floatingBtn.innerHTML = `
-                <a href="https://x.com/Annachen_trader" target="_blank" style="
+        // Add floating social media buttons for easy access
+        function createFloatingSocialButtons() {
+            // Create X/Twitter floating button
+            const floatingXBtn = document.createElement('div');
+            floatingXBtn.innerHTML = `
+                <a href="https://x.com/anna_chloe11?s=21" target="_blank" style="
                     position: fixed;
                     bottom: 20px;
                     right: 20px;
@@ -850,6 +882,32 @@
                     𝕏
                 </a>
             `;
+
+            // Create YouTube floating button
+            const floatingYTBtn = document.createElement('div');
+            floatingYTBtn.innerHTML = `
+                <a href="https://youtube.com/@Annachen-trading" target="_blank" style="
+                    position: fixed;
+                    bottom: 90px;
+                    right: 20px;
+                    width: 60px;
+                    height: 60px;
+                    background: linear-gradient(135deg, #ff0000, #cc0000);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 24px;
+                    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+                    z-index: 1000;
+                    transition: all 0.3s ease;
+                    animation: bounce 2s infinite 0.5s;
+                " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                    ▶
+                </a>
+            `;
             
             // Add bounce animation
             const bounceStyle = document.createElement('style');
@@ -862,11 +920,33 @@
             `;
             document.head.appendChild(bounceStyle);
             
-            document.body.appendChild(floatingBtn);
+            document.body.appendChild(floatingXBtn);
+            document.body.appendChild(floatingYTBtn);
+
+            // Add click tracking for floating buttons
+            floatingXBtn.addEventListener('click', function() {
+                console.log('Floating X button clicked');
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'floating_social_click', {
+                        'social_network': 'twitter',
+                        'button_type': 'floating'
+                    });
+                }
+            });
+
+            floatingYTBtn.addEventListener('click', function() {
+                console.log('Floating YouTube button clicked');
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'floating_social_click', {
+                        'social_network': 'youtube',
+                        'button_type': 'floating'
+                    });
+                }
+            });
         }
 
-        // Create floating X button on page load
-        document.addEventListener('DOMContentLoaded', createFloatingXButton);
+        // Create floating social buttons on page load
+        document.addEventListener('DOMContentLoaded', createFloatingSocialButtons);
     </script>
 </body>
 </html>
