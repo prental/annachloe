@@ -864,73 +864,63 @@ function googleTranslateElementInit() {
         // Setup auto-redirect functionality
         document.addEventListener('DOMContentLoaded', setupAutoRedirect);
 
-        // Add floating social media buttons for easy access
-        function createFloatingSocialButtons() {
-            // Create X/Twitter floating button
-            const floatingXBtn = document.createElement('div');
-            floatingXBtn.innerHTML = `
-                <a href="https://x.com/anna_chloe11?s=21" target="_blank" style="
-                    position: fixed;
-                    bottom: 20px;
-                    right: 20px;
-                    width: 60px;
-                    height: 60px;
-                    background: linear-gradient(135deg, #1da1f2, #0d8bd9);
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: white;
-                    text-decoration: none;
-                    font-size: 24px;
-                    box-shadow: 0 4px 20px rgba(29, 161, 242, 0.4);
-                    z-index: 1000;
-                    transition: all 0.3s ease;
-                    animation: bounce 2s infinite;
-                " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                    𝕏
-                </a>
-            `;
+     <script>
+    // Add floating WhatsApp button
+    function createFloatingWhatsAppButton() {
+        const floatingWAButton = document.createElement('div');
+        floatingWAButton.innerHTML = `
+            <a href="https://wa.me/+16507629764" target="_blank" style="
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #25D366, #128C7E);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-decoration: none;
+                font-size: 28px;
+                font-weight: bold;
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+                z-index: 1000;
+                transition: all 0.3s ease;
+                animation: bounce 2s infinite;
+            " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                ☎
+            </a>
+        `;
 
-          
-            // Add bounce animation
-            const bounceStyle = document.createElement('style');
-            bounceStyle.textContent = `
-                @keyframes bounce {
-                    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-                    40% { transform: translateY(-10px); }
-                    60% { transform: translateY(-5px); }
-                }
-            `;
-            document.head.appendChild(bounceStyle);
-            
-            document.body.appendChild(floatingXBtn);
-            document.body.appendChild(floatingYTBtn);
+        // Add bounce animation
+        const bounceStyle = document.createElement('style');
+        bounceStyle.textContent = `
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                40% { transform: translateY(-10px); }
+                60% { transform: translateY(-5px); }
+            }
+        `;
+        document.head.appendChild(bounceStyle);
 
-            // Add click tracking for floating buttons
-            floatingXBtn.addEventListener('click', function() {
-                console.log('Floating X button clicked');
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'floating_social_click', {
-                        'social_network': 'twitter',
-                        'button_type': 'floating'
-                    });
-                }
-            });
+        document.body.appendChild(floatingWAButton);
 
-            floatingYTBtn.addEventListener('click', function() {
-                console.log('Floating YouTube button clicked');
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'floating_social_click', {
-                        'social_network': 'youtube',
-                        'button_type': 'floating'
-                    });
-                }
-            });
-        }
+        // Add click tracking if Google Analytics is available
+        floatingWAButton.addEventListener('click', function() {
+            console.log('Floating WhatsApp button clicked');
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'floating_social_click', {
+                    'social_network': 'whatsapp',
+                    'button_type': 'floating'
+                });
+            }
+        });
+    }
 
-        // Create floating social buttons on page load
-        document.addEventListener('DOMContentLoaded', createFloatingSocialButtons);
-    </script>
+    // Create floating WhatsApp button on page load
+    document.addEventListener('DOMContentLoaded', createFloatingWhatsAppButton);
+</script>
+
 </body>
 </html>
